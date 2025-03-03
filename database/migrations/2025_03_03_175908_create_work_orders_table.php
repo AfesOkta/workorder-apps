@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('work_orders', function (Blueprint $table) {
             $table->id();
+            $table->string('work_order_number')->unique(); // Format: WO-YYYYMMDD-XXX
+            $table->string('product_name');
+            $table->integer('quantity');
+            $table->date('deadline');
+            $table->enum('status', ['Pending', 'In Progress', 'Completed', 'Canceled'])->default('Pending');
+            $table->foreignId('assigned_operator_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
