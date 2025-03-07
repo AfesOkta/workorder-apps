@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\WorkOrders;
+use App\Repositories\Impl\WorkOrdersServiceImpl as ImplWorkOrdersServiceImpl;
 use Illuminate\Http\Request;
+use App\Services\WorkOrdersServiceImpl;
 
 class WorkOrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $repository = New ImplWorkOrdersServiceImpl(new WorkOrders);
+        $perPage = $request->input('per_page', 15);
+        $workOrders = $repository->getAllWorkOrders($perPage);
+
+        return response()->json($workOrders);
     }
 
     /**
