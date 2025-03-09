@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->enum('report_type', ['work_order_summary', 'operator_summary']);
             $table->json('data'); // Menyimpan data laporan dalam format JSON
-            $table->foreignId('generated_by')->constrained('users')->onDelete('cascade');
+            $table->foreignId('generated_by')->constrained('users')->onDelete('restrict');
+            $table->foreignId('created_by')->constrained('users')->onDelete('restrict');
+            $table->foreignId('updated_by')->constrained('users')->onDelete('restrict');
             $table->timestamps();
         });
     }

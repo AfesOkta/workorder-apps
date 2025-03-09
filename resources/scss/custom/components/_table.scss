@@ -1,0 +1,51 @@
+// 
+// _table.scss
+// 
+
+.table {
+  th {
+      font-weight: $font-weight-semibold;
+  }
+  td {
+    outline: none;
+  }
+}
+
+//Table centered
+.table-centered {
+  td,th {
+      vertical-align: middle !important;
+  }
+}
+
+.table-nowrap {
+  th, td {
+    white-space: nowrap;
+  }
+}
+
+// table card list
+
+.table-card-list{
+  border-collapse:separate; 
+  border-spacing:0 12px; 
+  tr{
+    background-color: $card-bg;
+  }
+
+}
+
+// custom-table
+.custom-table {
+  .table {
+    tbody {
+      tr {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          box-shadow: $box-shadow-sm;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+// 
+// pages-rtl.scss
+//
+
+.search-box{
+    .form-control{
+        padding-left: 12px;
+        padding-right: 40px;
+    }
+
+    .search-icon{
+        left: auto;
+        right: 13px;
+    }
+}
+
+
+// timeline
+
+.timeline{
+    &:before {
+        left: auto;
+        right: 0;
+    }
+    .timeline-box {
+        .timeline-info-icon {
+            margin-right: 1.2rem!important;
+            margin-left: auto!important;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .timeline{
+        &:before {
+            left: auto;
+            right: 50%;
+        }
+        .time-show-btn{
+            left: auto;
+            right: 67px;
+            text-align: left;
+        }
+
+        .timeline-icon{
+            left: auto;
+            right: -115px;
+            &:after{
+                left: auto;
+                right: 23px;
+            }
+        }
+    }
+
+    .timeline-item{
+        &.timeline-left{
+            text-align: left;
+        }
+
+        .timeline-box{
+            margin-left: 0;
+            margin-right: 100px;
+        }
+
+        &.timeline-left{
+            .timeline-box{
+                margin-left: 100px;
+                margin-right: 0;
+                .timeline-info-icon {
+                    margin-right: auto!important;
+                    margin-left: 1.2rem!important;
+                }
+            }
+
+            .timeline-icon{
+                right: auto;
+                left: -119px;
+                &:after{
+                    right: auto;
+                    left: 23px;
+                }
+            }
+        }
+    }
+}
+
+// email
+
+.email-leftbar{
+    float: right;
+}
+
+.email-rightbar {
+    margin-right: 260px;
+    margin-left: 0px;
+}
+
+.message-list {
+    li {
+        .col-mail{
+            float: right;
+        }
+        .col-mail-1{
+            .star-toggle, .checkbox-wrapper-mail, .dot{
+                float: right
+            }
+            .checkbox-wrapper-mail {
+                margin: 15px 20px 0 10px;
+            }
+            .star-toggle {
+                margin-right: 5px;
+            }
+            
+            .title {
+                right: 110px;
+                left: 0;
+            }
+        }
+        .col-mail-2{
+            right: 320px;
+            left: 0;
+
+            .subject {
+                right: 0;
+                left: 200px;
+            }
+
+            .date {
+                left: 0;
+                right: auto;
+                padding-right: 80px;
+                padding-left: 0px;
+            }
+        
+        }
+    }
+    .checkbox-wrapper-mail {
+        label{
+            &:before{
+                right: 4px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .email-leftbar {
+        float: none !important;
+        width: 100%;
+    }
+    .email-rightbar {
+        margin-right: 0;
+    }
+}
+
+// chat
+
+.chat-list {
+    li{
+        .unread-message{
+            right: auto;
+            left: 16px;
+        }
+    }
+}
+
+.conversation-list {
+    .chat-avatar {
+        text-align: right;
+        float: right;
+    }
+    .conversation-text {
+        float: right;
+        margin-right: 14px;
+        .msg-seen {
+            right: 0;
+        }
+    }
+    .odd {
+        .chat-avatar {
+            float: left !important;
+        }
+        .conversation-text {
+            text-align: left;
+            float: left !important;
+            .msg-seen {
+                left: 0;
+            }
+        }
+    }
+  }
+  
+  .chat-inputbar {
+    padding-left: 0;
+    .chat-input {
+        padding: .47rem .47rem .47rem 6.6rem;
+    }
+    .chat-icon {
+        left: 7px;
+        top: 7px;
+        right: auto;
+    }
+  }
+
+// ecommerce
+
+.product-wishlist{
+    right: auto;
+    left: 20px;
+}
+
+.product-img{
+    .product-ribbon{
+        left: auto;
+        right: 20px;
+    }
+}
+
+.product-color {
+    right: auto;
+    left: 20px;
+    transform: translateY(-50%) translateX(-30px);
+}
+
+.product-review-link{
+    .list-inline-item{
+        a{
+            padding: 4px 0px 4px 8px;
+        }
+    }           
+}
+
+
+.card-radio-input{
+    &:checked+.card-radio:before{
+        right: auto;
+        left: 20px;
+    }
+}
+
+// authentication
+
+.home-btn {
+    position: absolute;
+    left: 25px;
+    right: auto;
+}
+

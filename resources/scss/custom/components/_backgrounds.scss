@@ -1,0 +1,80 @@
+// 
+// backgrounds.scss
+//
+
+
+@each $color,
+$value in $theme-colors {
+    .bg-soft-#{$color} {
+        background-color: rgba(($value), 0.20) !important;
+    }
+    .border-soft-#{$color} {
+        border-color: rgba(($value), 0.20) !important;
+    }
+    .bg-#{$color} {
+        &.color-box {
+            &:after {
+                border-color: rgba($value, 0.25);
+            }
+            &:before {
+                border-color: rgba($value, 0.12);
+            }
+        }
+    }
+}
+
+
+// color-box
+.color-box {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        border: 1px solid;
+        top: -7px;
+        right: 0;
+        bottom: 0;
+        left: -7px;
+        height: 120%;
+        width: 120%;
+        border-radius: 100%;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        border: 1px solid;
+        top: -15px;
+        right: 0;
+        bottom: 0;
+        left: -15px;
+        height: 142%;
+        width: 142%;
+        border-radius: 100%;
+    }
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(to right, $primary 0%, $info 100%);
+}
+.bg-gradient-success {
+    background: linear-gradient(to right, $success 0%, $warning 100%);
+}
+.bg-gradient-info {
+    background: linear-gradient(to right, $info 0%, $primary 100%);
+}
+.bg-gradient-warning {
+    background: linear-gradient(to right, $warning 0%, $danger 100%);
+}
+.bg-gradient-danger {
+    background: linear-gradient(to right, $danger 0%, $purple 100%);
+}
+.bg-gradient-purple {
+    background: linear-gradient(to right, $purple 0%, $orange 100%);
+}
+.bg-gradient-dark {
+    background: linear-gradient(to right, $dark 0%, $secondary 100%);
+}
+.bg-gradient-orange {
+    background: linear-gradient(to right, $orange 0%, $primary 100%);
+}
+

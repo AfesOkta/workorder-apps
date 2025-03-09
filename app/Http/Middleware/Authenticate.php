@@ -3,15 +3,40 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
-use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Closure;
+use Auth;
 
 class Authenticate extends Middleware
 {
+    protected $guards = [];
+     /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @param  string[] ...$guards
+     * @return mixed
+     *
+     * @throws \Illuminate\Auth\AuthenticationException
+     */
+    public function handle($request, Closure $next, ...$guards)
+    {
+        $this->guards = $guards;
+
+        return parent::handle($request, $next, ...$guards);
+    }
     /**
      * Get the path the user should be redirected to when they are not authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return string|null
      */
-    protected function redirectTo(Request $request): ?string
+    protected function redirectTo($request)
     {
-        return $request->expectsJson() ? null : route('login');
+        if (! $request->expectsJson()) {
+            return route('user.login');
+        }
+
     }
 }

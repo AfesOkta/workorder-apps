@@ -1,0 +1,62 @@
+// 
+// _badge.scss
+// 
+
+.badge {
+  padding: 4px 5px 3px 5px;
+  font-size: 80%;
+}
+
+// Soft badge
+@mixin badge-variant-soft($bg) {
+  color: $bg;
+  background-color: rgba($bg, 0.18);
+
+  &[href] {
+    @include hover-focus {
+      color: $bg;
+      text-decoration: none;
+      background-color: rgba($bg, 0.4);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .badge-soft-#{$color} {
+      @include badge-variant-soft($value);
+  }
+  .badge-outline-#{$color} {
+    border: 1px solid ($value);
+    color: $value;
+  }
+  .btn-outline-#{$color} {
+    .badge {
+      border: 1px solid $value;
+      color: $value;
+    }
+    &:hover {
+      .badge {
+        background-color: $white;
+        color: $value;
+      }
+    }
+  }
+  .btn-#{$color} {
+    .badge {
+      color: $value;
+    }
+  }
+}
+
+.btn {
+  .badge {
+    background: $white;
+  }
+}
+
+
+// Dark badge
+
+.badge-dark{
+  color: $light;
+}

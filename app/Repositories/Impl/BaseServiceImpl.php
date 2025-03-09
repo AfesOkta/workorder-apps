@@ -2,11 +2,11 @@
 
 namespace App\Repositories\Impl;
 
-use App\Repositories\BaseService;
+use App\Repositories\BaseServiceInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-class BaseServiceImpl implements BaseService
+class BaseServiceImpl implements BaseServiceInterface
 {
     protected Model $model;
 

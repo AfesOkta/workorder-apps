@@ -18,8 +18,9 @@ return new class extends Migration
             $table->integer('quantity');
             $table->date('deadline');
             $table->enum('status', ['Pending', 'In Progress', 'Completed', 'Canceled'])->default('Pending');
-            $table->foreignId('assigned_operator_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
+            $table->foreignId('assigned_operator_id')->constrained('users')->onDelete('restrict');
+            $table->foreignId('created_by')->constrained('users')->onDelete('restrict');
+            $table->foreignId('updated_by')->constrained('users')->onDelete('restrict');
             $table->timestamps();
         });
     }

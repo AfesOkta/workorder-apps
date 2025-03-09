@@ -17,7 +17,9 @@ return new class extends Migration
             $table->enum('status', ['Pending', 'In Progress', 'Completed', 'Canceled']);
             $table->integer('quantity_updated');
             $table->text('notes')->nullable();
-            $table->foreignId('updated_by')->constrained('users')->onDelete('cascade');
+            $table->foreignId('assigned_operator_id')->constrained('users')->onDelete('restrict');
+            $table->foreignId('created_by')->constrained('users')->onDelete('restrict');
+            $table->foreignId('updated_by')->constrained('users')->onDelete('restrict');
             $table->timestamps();
         });
     }

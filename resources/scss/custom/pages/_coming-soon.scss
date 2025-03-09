@@ -1,0 +1,25 @@
+// 
+// coming-soon.scss
+//
+
+.counter-number {
+    font-size: 32px;
+    font-weight: $font-weight-semibold;
+    text-align: center;
+    display: flex;
+    span {
+        font-size: 16px;
+        font-weight: $font-weight-normal;
+        display: block;
+        padding-top: 5px;
+    }
+}
+
+.coming-box {
+    width: 25%;
+    padding: 16px;
+    border-right: 1px solid darken($gray-300, 5%);
+    &:last-child {
+        border-right: none;
+    }
+}

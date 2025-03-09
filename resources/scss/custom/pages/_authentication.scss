@@ -1,0 +1,87 @@
+// 
+// authentication.scss
+//
+
+
+// authentication home icon
+.home-btn {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+}
+
+.authentication-bg{
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    .auth-logo{
+        .logo{
+            margin: 0px auto;
+        }
+    }
+
+}
+
+// error page
+.error-font {
+    font-size: 9rem;
+    text-shadow: 4px 4px 6px rgba($gray-900, 0.26);
+}
+
+.mover-animation {
+    animation: mover 1s infinite alternate;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+// signin card title
+
+.signin-other-title{
+    position: relative;
+    &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        right: 0;
+        background-color: $border-color;
+        top: 10px;
+    }
+
+    .title{
+        display: inline-block;
+        position: relative;
+        z-index: 9;
+        background-color: $card-bg;
+        padding: 2px 16px;
+    }
+}
+
+
+// auth carousel
+
+.auth-carousel{
+    &.owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span{
+                    background-color: $card-bg;
+                }
+                &.active{
+                    span{
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}

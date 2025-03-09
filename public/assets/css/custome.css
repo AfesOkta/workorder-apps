@@ -1,0 +1,15 @@
+.tdRight {
+    text-align: end;
+    text-wrap: wrap !important;
+}
+
+.tdMiddle {
+    text-align: start;
+    vertical-align: middle !important;
+    text-wrap: wrap !important;
+}
+
+.tdCenter {
+    text-align: center;
+    text-wrap: wrap !important;
+}
